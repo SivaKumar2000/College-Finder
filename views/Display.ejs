@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+	<head>
+		<title> hobbies </title>
+	</head>
+	<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+<style>
+	*{
+		font-size: 125%;
+		color: black;
+	}
+	body{
+		background-color: #e7e7e7;
+		height: 100%;
+		width: 100vw;
+	}
+	.box{
+		margin-top: 2%;
+        margin-bottom: 2%;
+        height: 96%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: white;
+
+	}
+	img{
+		width: 80%;
+		height: 40%;
+	}
+	.t{
+		border: 2px solid black;
+		width: 50%;
+	}
+	.but{
+		font-size: 150%;
+		margin-bottom: 2%;
+	}
+</style>
+	<body>
+		<div class="container box">
+			<% if(admin) { %>
+				
+            	<h1 style="font-size: 330%; font-style: italic; color: blue;"><%- admin[0].INSTITUTE_NAME %></h1><br>
+				<% for (i=0; i < admin.length ; i++) { %>
+				<h2>Branch : <%- admin[i].BRANCH_NAME %></h2>
+				<table class="table table-bordered t">
+					<thead>
+					  <tr>
+						<th>Category</th>
+						<th>Closing Rank</th>
+					  </tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>OC_BOYS</td>
+							<% if(admin[i].OC_BOYS==-1) {%>
+								<td>NA</td>
+							<% }else{ %>
+								<td><%- admin[i].OC_BOYS %></td>
+							<% } %>
+							</tr>
+							<tr>
+							<td>OC_GIRLS</td>
+							<td><%- admin[i].OC_GIRLS %></td>
+							</tr>
+							<tr>
+							<td>BC_A_BOYS</td>
+							<% if(admin[i].BC_A_BOYS==-1) {%>
+								<td>NA</td>
+							<% }else{ %>
+								<td><%- admin[i].BC_A_BOYS %></td>
+							<% } %>
+							</tr>
+							<tr>
+							<td>BC_A_GIRLS</td>
+							<td><%- admin[i].BC_A_GIRLS %></td>
+							</tr>
+							<tr>
+							<td>BC_B_BOYS</td>
+							<% if(admin[i].BC_B_BOYS==-1) {%>
+								<td>NA</td>
+							<% }else{ %>
+								<td><%- admin[i].BC_B_BOYS %></td>
+							<% } %>
+							</tr>
+							<tr>
+							<td>BC_B_GIRLS</td>
+							<td><%- admin[i].BC_B_GIRLS %></td>
+							</tr>
+							<tr>
+							<td>BC_C_BOYS</td>
+							<% if(admin[i].BC_C_BOYS==-1) {%>
+								<td>NA</td>
+							<% }else{ %>
+								<td><%- admin[i].BC_C_BOYS %></td>
+							<% } %>
+							</tr>
+							<tr>
+							<td>BC_C_GIRLS</td>
+							<td><%- admin[i].BC_C_GIRLS %></td>
+							</tr>
+							<tr>
+							<td>BC_D_BOYS</td>
+							<% if(admin[i].BC_D_BOYS==-1) {%>
+								<td>NA</td>
+							<% }else{ %>
+								<td><%- admin[i].BC_D_BOYS %></td>
+							<% } %>
+							</tr>
+							<tr>
+							<td>BC_D_GIRLS</td>
+							<td><%- admin[i].BC_D_GIRLS %></td>
+							</tr>
+							<tr>
+							<td>BC_E_BOYS</td>
+							<% if(admin[i].BC_E_BOYS==-1) {%>
+								<td>NA</td>
+							<% }else{ %>
+								<td><%- admin[i].BC_E_BOYS %></td>
+							<% } %>
+							</tr>
+							<tr>
+							<td>BC_E_GIRLS</td>
+							<td><%- admin[i].BC_E_GIRLS %></td>
+							</tr>
+							<tr>
+							<td>SC_BOYS</td>
+							<% if(admin[i].SC_BOYS==-1) {%>
+								<td>NA</td>
+							<% }else{ %>
+								<td><%- admin[i].SC_BOYS %></td>
+							<% } %>
+							</tr>
+							<tr>
+							<td>SC_GIRLS</td>
+							<td><%- admin[i].SC_GIRLS %></td>
+							</tr>
+							<tr>
+							<td>ST_BOYS</td>
+							<% if(admin[i].ST_BOYS==-1) {%>
+								<td>NA</td>
+							<% }else{ %>
+								<td><%- admin[i].ST_BOYS %></td>
+							<% } %>
+							</tr>
+							<tr>
+							<td>ST_GIRLS</td>
+							<td><%- admin[i].ST_GIRLS %></td>
+							</tr>
+					</tbody>
+				  </table>
+				  <br>
+				  <% } %>
+				  <br>
+				  <h2>Tuition Fees : <%- (admin[0].TUITION_FEE)*4 %> (4 years)</h2>
+				  <h2>Affiliated to : <%- admin[0].AFFILIATED %></h2><br>
+				<a href="<%- admin[0].INST_LOC %>" class="btn btn-primary but" target="_blank">VIEW COLLEGE LOCATION</a><br>
+				<a href="<%- admin[0].INST_WEB %>" class="btn btn-primary but" target="_blank">VIEW COLLEGE WEBSITE</a>
+        	<%} %>
+		</div>
+	</body>
+</html>

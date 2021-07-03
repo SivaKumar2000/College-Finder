@@ -1,0 +1,405 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-color: #e7e7e7;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .h {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            background-color: #00d5de ;
+            flex-direction: column;
+            color: white;
+            font-size: 150%;
+            font-family: 'Dosis';
+        }
+        .welcome{
+            font-size: 120%;
+        }
+        h1 {
+            font-size-adjust: auto;
+        }
+
+        .container {
+            margin-top: 2%;
+            margin-bottom: 2%;
+            height: 96%;
+            background: url('https://i.pinimg.com/originals/e2/71/fd/e271fda72f1e158b5f0569cc72d36d7f.jpg');
+            width: 100%;
+            border: solid 1px #c6c6c7;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user {
+            background-color: aliceblue;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            height: 40%;
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            font-size: 130%;
+            
+        }
+        .admin{
+            margin: 3%;
+        }
+
+        .leg {
+            background-color: chocolate;
+            color: white;
+            padding: 5px 10px;
+        }
+        .find{
+            border: 1px solid black;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 125%;
+        }
+        .add{
+            display: flex;
+
+        }
+        .but{
+            margin: 1%;
+            margin-top: 3%;
+            margin-left: 10%;
+            padding: 1%;
+            width: 20%;
+            background-color:cornflowerblue;
+            color: black;
+            font-size: 125%;
+            font-weight:600;
+            font-style: italic;
+        }
+        .show1{
+            margin: 1%;
+            margin-top: 3%;
+            margin-left: 35%;
+            padding: 1%;
+            background-color:cornflowerblue;
+            color: black;
+            font-size: 125%;
+            font-weight:600;
+            font-style: italic;
+        }
+        .show{
+            margin: 2%;
+            background-color:cornflowerblue;
+            color: black;
+            font-size: 125%;
+            font-weight:600;
+            font-style: italic;
+        }
+        .b{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .search{
+            display: none;
+        }
+        .in{
+            width: 60%;
+        }
+        @media screen and (max-width: 600px) {
+            .container{
+                height: 760px;
+            }
+            .user{
+                height: 300px;
+            }
+            .show{
+                left:-30px;
+            }
+            .show,.but{
+                width: 130px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h">
+        <h1>Welcome to College-Finder
+        </h1>
+        <ul>
+            <li>enter your eamcet rank</li>
+            <li>click on submit</li>
+            <li>check your results</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="welcome"><span style="font-size: 130%;font-weight:bold;">Welcome  </span><b><%- name %></b></div> 
+        <form action="" method="post">
+            <fieldset class="border p-2 user" id="fs">
+                <legend class="w-auto leg">UserForm:</legend>
+                <div class="Rank">
+                    <label for="Eamcet Rank"><b>Eamcet Rank:</b></label>
+                    <input type="number" name="rank" min="1" required>
+                </div>
+                <div class="Gender">
+                    <label class="radio-inline">
+                    <b>Gender:</b>  &emsp;&emsp;</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" value="male"checked>Male
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" value="female">Female
+                    </label>
+                </div>
+                <div class="Category">
+                    <label for="category"><b>Category:</b> &emsp;&nbsp;</label>
+                    <input list="cate" name="category" required>
+                </div>
+                <datalist id="cate">
+                    <option value="OC">
+                    <option value="SC">
+                    <option value="ST">
+                    <option value="BC_A">
+                    <option value="BC_B">
+                    <option value="BC_C">
+                    <option value="BC_D">
+                    <option value="BC_E">
+                </datalist>
+            </fieldset>
+            <div class="b">
+                <button type="submit" formaction="/home" class="btn btn-success find" id="find">Find Colleges</button>
+                <button type="button" class="btn btn-success find show" id="s"onclick=sho()>Search by college name</button>
+            </div>
+        </form>
+    <form method="POST">
+        <div class="search" id="search">
+            <label for="category"><b>CollegeName : </b> &emsp;&nbsp;</label>
+            <input list="clgs" name="clgName" class="in" required>
+            <datalist id="clgs">
+                <option value="A C E ENGINEERING COLLEGE">
+                    <option value="AAR MAHAVEER ENGINEERING COLLEGE">
+                    <option value="ABDULKALAM INST OF TECHNOLOGY AND SCI">
+                    <option value="ABHINAV HI-TECH COLLEGE OF ENGINEERING">
+                    <option value="ANNAMACHARYA INST OF TECHNOLOGY AND SCI">
+                    <option value="ANU BOSE INSTT OF TECHNOLOGY">
+                    <option value="ANURAG COLLEGE OF ENGINEERING">
+                    <option value="ANURAG ENGINEERING COLLGE">
+                    <option value="ANURAG GRP OF INSTNS- CVSR COLL OF ENGG">
+                    <option value="ARJUN COLLEGE OF TECHNOLOGY AND SCIENCE">
+                    <option value="ASHOKA INST OF ENGINEERING TECHNOLOGY">
+                    <option value="AURORAS SCIENTIFIC AND TECHNOLOGICAL INSTITUTE">
+                    <option value="AURORAS TECHNOLOGICAL AND RESEARCH INSTITUTE">
+                    <option value="AVANTHI INST OF ENGG AND TECHNOLOGY">
+                    <option value="AVANTHIS SCIENTIFIC TECH AND RESEARCH ACADEMY">
+                    <option value="AVN INST OF ENGG TECHNOLOGY">
+                    <option value="B V RAJU INSTITUTE OF TECHNOLOGY">
+                    <option value="BALAJI INSTITUTE OF TECHNOLOGY AND SCI">
+                    <option value="BANDARI SRINIVAS INSTITUTE OF TECHNOLOGY">
+                    <option value="BHARAT INSTITUTE OF ENGG AND TECHNOLOGY">
+                    <option value="BHASKAR ENGINEERING COLLEGE">
+                    <option value="BHOJREDDY ENGINEERING COLLEGE FOR WOMEN">
+                    <option value="BOMMA INST OF TECHNOLOGY AND SCI">
+                    <option value="BRILLIANT GRAMMER SCHOOL EDNL SOC GRP OF INSTNS">
+                    <option value="BRILLIANT INSTT OF ENGG AND TECHNOLOGY">
+                    <option value="BVRIT COLLEGE OF ENGINEERING FOR WOMEN">
+                    <option value="C M R COLL OF PHARMACY">
+                    <option value="C M R COLLEGE OF ENGG AND TECHNOLOGY">
+                    <option value="CHAITANYA BHARATHI INSTITUTE OF TECHNOLOGY">
+                    <option value="CHAITANYA INST OF TECH AND SCIENCE">
+                    <option value="CMR ENGG COLLEGE">
+                    <option value="CMR INSTITUTE OF TECHNOLOGY">
+                    <option value="CMR TECHNICAL CAMPUS">
+                    <option value="COLLEGE OF AGRICULTURAL ENGG">
+                    <option value="COLLEGE OF DAIRY TECHNOLOGY">
+                    <option value="COLLEGE OF FOOD SCIENCE AND TECHNOLOGY">
+                    <option value="CVR COLLEGE OF ENGINEERING">
+                    <option value="D R K COLLEGE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="D R K INSTITUTE OF SCI AND TECHNOLOGY">
+                    <option value="ELLENKI COLLGE OF ENGG AND TECHNOLOGY">
+                    <option value="ELLENKI INSTITUTE OF ENGG AND TECHNOLOGY">
+                    <option value="G NARAYNAMMA INSTITUTE OF TECHNOLOGY AND SCI">
+                    <option value="GANAPATHI ENGINEERING COLLGE">
+                    <option value="GANDHI ACADEMY OF TECHNOLOGICAL EDUCATION">
+                    <option value="GEETANJALI COLLEGE OF ENGG AND TECHNOLOGY">
+                    <option value="GLOBAL INST OF ENGINEERING AND TECHNOLOGY">
+                    <option value="GOKARAJU RANGARAJU INSTITUTE OF ENGG AND TECH">
+                    <option value="GURUNANAK INST OF TECHNOLOGY">
+                    <option value="GURUNANAK INSTTECH CAMPUS">
+                    <option value="HOLY MARY INSTITUTE OF TECH SCIENCE">
+                    <option value="HYDERABAD INST OF TECHNOLOGY AND MGMT">
+                    <option value="INDUR INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="INSTITUTE OF AERONAUTICAL ENGINEERING">
+                    <option value="J B INSTITUTE OF ENGG AND TECHNOLOGY">
+                    <option value="J N T U COLLEGE OF ENGINEERING SULTANPUR">
+                    <option value="JAYA PRAKASH NARAYAN COLLEGE OF ENGINEERING">
+                    <option value="JAYAMUKHI INSTITUTE OF TECHNOLOGY AND SCIS">
+                    <option value="JNTU COLLEGE OF ENGG HYDERABAD">
+                    <option value="JNTU COLLEGE OF ENGG MANTHANI">
+                    <option value="JNTU COLLEGE OF ENGINEERING KARIMNAGAR">
+                    <option value="JNTU SCHOOL OF PLANNING AND ARCH - SELF FINANCE">
+                    <option value="JNTUH-5 YEAR INTEGRATED MTECH SELF FINANCE">
+                    <option value="JOGINPALLY B R ENGINEERING COLLEGE">
+                    <option value="JYOTHISHMATHI INST OF TECHNOLOGY SCIENCES">
+                    <option value="JYOTHISHMATHI INSTITUTE OF TECHNOLOGY AND SCI">
+                    <option value="K U COLLEGE OF ENGG KOTHAGUDEM">
+                    <option value="KAKATIYA INST OF TECHNOLOGY SCI FOR WOMEN">
+                    <option value="KAKATIYA INSTITUTE OF TECHNOLOGY AND SCI">
+                    <option value="KAMALA INSTITUTE OF TECHNOLOGY AND SCIENCE">
+                    <option value="KASIREDDY NARAYANAREDDY COLL ENGG RES">
+                    <option value="KESHAV MEMORIAL INST OF TECHNOLOGY">
+                    <option value="KGREDDY COLLEGE OF ENGG AND TECHNOLOGY">
+                    <option value="KHAMMAM INST OF TECHNOLOGY AND SCIENCE">
+                    <option value="KLRCOLLEGE OF ENGG AND TECHNOLOGY PALONCHA">
+                    <option value="KODADA INST OF TECHNOLOGY AND SCIENCE FOR WOMEN">
+                    <option value="KOMMURI PRATAP REDDY INST OF TECHNOLOGY">
+                    <option value="KSHATRIYA COLLEGE OF ENGINEERING">
+                    <option value="KU COLLEGE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="M L R INSTITUTE OF TECHNOLOGY">
+                    <option value="M V S R ENGINEERING COLLEGE">
+                    <option value="MAHATMA GANDHI INSTITUTE OF TECHNOLOGY">
+                    <option value="MAHAVEER INSTITUTE OF SCI AND TECHNOLOGY">
+                    <option value="MALLA REDDY COLLEGE OF ENGG TECHNOLOGY (AUTONOMOUS)">
+                    <option value="MALLA REDDY COLLEGE OF ENGINEERING">
+                    <option value="MALLA REDDY COLLEGE OF ENGINEERING FOR WOMEN">
+                    <option value="MALLA REDDY COLLEGE OF PHARMACY">
+                    <option value="MALLA REDDY ENGG COLLEGE FOR WOMEN (AUTONOMOUS)">
+                    <option value="MALLA REDDY ENGINEERING COLLEGE AND MANAGEMENT SCIENCES">
+                    <option value="MALLA REDDY INSTITUTE OF TECHNOLOGY">
+                    <option value="MALLAREDDY ENGINEERING COLLEGE AUTONOMOUS">
+                    <option value="MALLAREDDY INST OF ENGG AND TECHNOLOGY">
+                    <option value="MALLAREDDY INST OF TECHNOLOGY AND SCI">
+                    <option value="MARRI LAXMAN REDDY INST OF TECHNOLOGY AND MANAGEMENT">
+                    <option value="MATRUSRI ENGINEERING COLLEGE">
+                    <option value="MEGHA INST OF ENGG AND TECHNOLOGY FOR WOMEN">
+                    <option value="METHODIST COLLEGE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="MGU COLLEGE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="MINA INST OF ENGG AND TECHNOLOGY FOR WOMEN">
+                    <option value="MNRCOLLEGE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="MOTHER TERESA INSTITUTE OF SCI AND TECHNOLOGY">
+                    <option value="MOTHER THERESA COLLEGE OF ENGG AND TECHNOLOGY">
+                    <option value="NALLA NARASIMHA REDDY EDNL SOC GRP OF INSTNS">
+                    <option value="NALLAMALLA REDDY ENGINEERING COLLEGE">
+                    <option value="NARSIMHAREDDY ENGINEERING COLLEGE">
+                    <option value="NEIL GOGTE INST OF TECHNOLOGY">
+                    <option value="NETAJI INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="NIGAMA ENGINEERING COLLEGE">
+                    <option value="NOBLE COLLEGE OF ENGG TECHNOLOGY FOR WOMEN">
+                    <option value="O U COLLEGE OF ENGG HYDERABAD">
+                    <option value="O U COLLEGE OF TECH HYDERABAD">
+                    <option value="PALLAVI ENGINEERING COLLEGE">
+                    <option value="PRINCETON INST OF ENGG TECH FOR WOMEN">
+                    <option value="PRIYADARSHINI INSTITUTE OF SCIENCE & TECHNOLOGY FOR WOMEN">
+                    <option value="RISHI MS INST OF ENGG AND TECH FOR WOMEN">
+                    <option value="RRSCOLLEGE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="S R ENGINEERING COLLEGE">
+                    <option value="SAI SPURTI INSTITUTE OF TECHNOLOGY">
+                    <option value="SAMSKRUTHI COLLEGE OF ENGG AND TECHNOLOGY">
+                    <option value="SCIENT INSTITUTE OF TECHNOLOGY">
+                    <option value="SIDDHARTHA INSTT OF ENGG AND TECHNOLOGY">
+                    <option value="SIDDHARTHA INSTT OF TECHNOLOGY AND SCIENCES">
+                    <option value="SPHOORTHY ENGINEERING COLLEGE">
+                    <option value="SREE CHAITANYA COLLEGE OF ENGINEERING">
+                    <option value="SREE CHAITANYA INST OF TECHNOLOGY SCIENCES">
+                    <option value="SREE DATTHA GRP OF INSTNS">
+                    <option value="SREE KAVITHA ENGINEERING COLLEGE">
+                    <option value="SREENIDHI INSTITUTE OF SCI AND TECHNOLOGY">
+                    <option value="SREYAS INST OF ENGG AND TECHNOLOGY">
+                    <option value="SRI CHAITANYA COLLEGE OF ENGG AND TECH">
+                    <option value="SRI DATTA COLL OF ENGINEERING AND SCIENCE">
+                    <option value="SRI INDU COLLEGE OF ENGG AND TECHNOLOGY">
+                    <option value="SRI INDU INSTITUTE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="SRI SAI EDNL SOC GRP OF INSTNS">
+                    <option value="SRI VENKATESWARA ENGINEERING COLLEGE">
+                    <option value="SRI VISHWESWARAYA INST OF TECHNOLOGY AND SCI">
+                    <option value="SRIDEVI WOMENS ENGINEERING COLLEGE">
+                    <option value="ST MARTINS ENGINEERING COLLEGE">
+                    <option value="ST PETERS ENGINEERING COLLEGE">
+                    <option value="ST PETERS INSTITUTE OF PHARMACEUTICAL SCI">
+                    <option value="STANLEY COLLEGE OF ENGG AND TECHNOLOGY FOR WOMEN">
+                    <option value="SUMATHI REDDY INST OF TECHNOLOGY FOR WOMEN">
+                    <option value="SVS GRP OF INSTNS - SVS INST OF TECH">
+                    <option value="SWAMI VIVEKANANDA INST OF TECHNOLOGY">
+                    <option value="SWARNA BHARATHI INSTITUTE OF SCI AND TECHNOLOGY">
+                    <option value="SWATHI INST OF TECHNOLOGY SCI">
+                    <option value="T K R COLLEGE OF ENGG AND TECHNOLOGY">
+                    <option value="T R R COLLEGE OF ENGINEERING">
+                    <option value="TALLA PADMAVATHI COLL OF ENGINEERING">
+                    <option value="TEEGALA KRISHNA REDDY ENGINEERING COLLEGE">
+                    <option value="TRINITY COLLEGE OF ENGINEERING AND TECHNOLOGY">
+                    <option value="TUDI RAMI REDDY INST OF TEC AND SCI">
+                    <option value="UNIVERSITY COLLEGE OF ENGG AND TECH FOR WOMEN KU CAMPUS">
+                    <option value="V N R VIGNAN JYOTHI INSTITUTE OF ENGG AND TECH">
+                    <option value="VAAGDEVI COLLEGE OF ENGINEERING">
+                    <option value="VAAGESHWARI COLL OF ENGINEERING">
+                    <option value="VAGDEVI COLLEGE OF PHARMACY">
+                    <option value="VAGDEVI ENGINEERING COLLEGE">
+                    <option value="VASAVI COLLEGE OF ENGINEERING">
+                    <option value="VIDYAJYOTHI INSTITUTE OF TECHNOLOGY">
+                    <option value="VIGNAN BHARATI INSTITUTE OF TECHNOLOGY (AUTONOMOUS)">
+                    <option value="VIGNAN INSTITUTE OF TECHNOLOGY AND SCI">
+                    <option value="VIGNANA BHARATHI ENGINEERING COLLEGE">
+                    <option value="VIJAYA ENGINEERING COLLEGE">
+                    <option value="VINUTHNA INST OF TECHNOLOGY SCIENCE">
+                    <option value="VISWESWARAYA COLL OF ENGG AND TECHNOLOGY">
+            </datalist>
+        </div>
+        <button class="btn btn-success find show1" id="sh" style="display: none;" formaction="/home">Show College</button>
+        <button type="button" class="btn btn-success find show1" id="shp" style="display: none;" onclick="sho1()">Find Colleges By rank</button>
+    </form>
+        <% if(isLoggedin) {%> 
+        <div class="admin">
+            <h2>Special Previleges: </h2>
+            <div class="add">
+                <button class="btn btn-primary but"><a href="/add" style="color: black;">Add College</a></button>
+                <button class="btn btn-primary but"><a href="/update" style="color: black;">Update College</a></button>
+                <button class="btn btn-primary but"><a href="/delete" style="color: black;">Delete College</a></button>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <script type="text/javascript">
+        function sho(){
+            document.getElementById("fs").style.marginLeft="-8000px";
+            document.getElementById("find").style.marginLeft="-8000px";
+            document.getElementById("search").style.display="flex";
+            document.getElementById("search").style.marginTop="-250px";
+            document.getElementById("s").style.display="none";
+            document.getElementById("sh").style.display="block";
+            document.getElementById("shp").style.display="block";
+        }
+        function sho1(){
+            document.getElementById("fs").style.marginLeft="0px";
+            document.getElementById("find").style.marginLeft="0px";
+            document.getElementById("search").style.display="none";
+            document.getElementById("search").style.marginTop="0px";
+            document.getElementById("s").style.display="block";
+            document.getElementById("sh").style.display="none";
+            document.getElementById("shp").style.display="none";
+        }
+    </script>
+</body>
+
+</html>

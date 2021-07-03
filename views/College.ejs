@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet" />
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+
+<style>
+    body {
+        background-color: #e7e7e7;
+        width: 100vh;
+    }
+
+    .myheader {
+        border: 2px solid black;
+        background-color: #C70039;
+        text-align: center;
+        color: azure;
+    }
+
+    .middle {
+        display: flex;
+    }
+
+    .name {
+        display: flex;
+        flex-direction: column;
+        max-height: 900px;
+    }
+
+    .na {
+        margin: 2%;
+        padding: 1%;
+        border: 1px solid black;
+        background-color: khaki;
+        display: flex;
+        flex-direction: column;
+        max-height: 900px;
+    }
+
+    .college {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 2%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+        margin: 1%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tit {
+        font-size: 230%;
+        font-weight: bold;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        font-size: 150%;
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .special{
+        height: 200px;
+        width: 150px;
+    }
+    .choose{
+        height: 150px;
+        width: 150px;
+    }
+    .Ownership{
+        height: 100px;
+    }
+    .co {
+        width: 100%;
+        margin-right: 2%;
+    }
+    #home{
+        font-size: 200%;
+        color: white;
+    }
+    @media screen and (max-width: 600px) {
+
+        .name {
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-height: 800px;
+            margin: 0 -5px;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: column;
+        }
+        .special{
+            height: 110px;
+            width: 140px;
+        }
+        .Ownership,.choose{
+            height: 110px;
+            width: 130px;
+        }
+        .coed{
+            width: 130px;
+        }
+        .item{
+            margin: 0 10px;
+        }
+    }
+
+    .but {
+        font-size: 125%;
+        font-weight: 600;
+        font-style: italic;
+    }
+    .naf{
+        background-color: #C70039;
+    }
+    .navbar-center{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    h1{
+        display: inline;
+    }
+</style>
+
+<body>
+    <div class="myheader" id="myheader">
+        <h1>Choose a wise college!!</h1>
+        <div style="float: right;margin-right: 3%;">
+            <a href="/home" id="home">Home</a>
+            <% if(isLogged) { %>
+                <a href="/logout" id="home">Logout</a>
+            <% } %>
+        </div>
+    </div>
+    <div class="middle">
+        <form method="POST" class="na">
+            <div class="name">
+                <div class="item">
+                <b style="font-size: 150%;">Choose Location:</b><br>
+                <div style="overflow: auto;background-color: #e7e7e7;padding: 1%;" class="choose">
+                    <input type="checkbox" name="Location" value="KGM">
+                    <label>Bhadradri Kothagudem</label><br>
+                    <input type="checkbox" name="Location" value="HYD">
+                    <label>Hyderabad</label><br>
+                    <input type="checkbox" name="Location" value="JTL">
+                    <label>Jagtial</label><br>
+                    <input type="checkbox" name="Location" value="KMR">
+                    <label>Kamareddy</label><br>
+                    <input type="checkbox" name="Location" value="KRM">
+                    <label>Karimnagar</label><br>
+                    <input type="checkbox" name="Location" value="KHM">
+                    <label>Khammam</label><br>
+                    <input type="checkbox" name="Location" value="MBN">
+                    <label>Mahabubnagar</label><br>
+                    <input type="checkbox" name="Location" value="MED">
+                    <label>Medak</label><br>
+                    <input type="checkbox" name="Location" value="MDL">
+                    <label>Medchal</label><br>
+                    <input type="checkbox" name="Location" value="NLG">
+                    <label>Nalgonda</label><br>
+                    <input type="checkbox" name="Location" value="NZB">
+                    <label>Nizamabad</label><br>
+                    <input type="checkbox" name="Location" value="RR">
+                    <label>Rangareddy</label><br>
+                    <input type="checkbox" name="Location" value="SRD">
+                    <label>Sangareddy</label><br>
+                    <input type="checkbox" name="Location" value="SDP">
+                    <label>Siddipet</label><br>
+                    <input type="checkbox" name="Location" value="SRP">
+                    <label>Suryapet</label><br>
+                    <input type="checkbox" name="Location" value="WGR">
+                    <label>Warangal</label><br>
+                    <input type="checkbox" name="Location" value="WGU">
+                    <label>Warangal Urban</label><br>
+                    <input type="checkbox" name="Location" value="YBG">
+                    <label>Yadadri Bhuvanagiri</label><br>
+                </div><br></div>
+                <div class="item">
+                <b style="font-size: 150%;">Ownership:</b><br>
+                <div style="background-color: #e7e7e7;padding:1%;" class="Ownership">
+                    <input type="checkbox" value="GOV" name="Ownership">
+                    <label>Public/Government</label><br>
+                    <input type="checkbox" value="PVT" name="Ownership">
+                    <label>Private</label><br>
+                    <input type="checkbox" value="UNIV" name="Ownership">
+                    <label>University</label><br>
+                    <input type="checkbox" value="SF" name="Ownership">
+                    <label>Self-Finance</label><br><br>
+                </div><br></div>
+                <div class="item">
+                <b style="font-size: 150%;">Specialization:</b><br>
+                <div style="overflow: auto;background-color: #e7e7e7; border-radius: 5%;" class="special">
+                    <input type="checkbox" name="Branch" value="ANE">
+                    <label>AERONAUTICAL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="AGR">
+                    <label>AGRICULTURAL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="AI">
+                    <label>ARTIFICIAL INTELLIGENCE</label><br>
+                    <input type="checkbox" name="Branch" value="AUT">
+                    <label>AUTOMOBILE ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="BME">
+                    <label>BIO-MEDICAL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="BIO">
+                    <label>BIO-TECHNOLOGY</label><br>
+                    <input type="checkbox" name="Branch" value="MMS">
+                    <label>BTECH MECHANICAL WITH MTECH
+                        MANUFACTURING SYSTEMS</label><br>
+                    <input type="checkbox" name="Branch" value="MTE">
+                    <label>BTECH MECHANICAL WITH MTECH THERMAL
+                        ENGG</label><br>
+                    <input type="checkbox" name="Branch" value="CHE">
+                    <label>CHEMICAL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="CIV">
+                    <label>CIVIL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="CME">
+                    <label>COMPUTER ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="CSN">
+                    <label>COMPUTER SCIENCE & ENGINEERING (NETWORKS)</label><br>
+                    <input type="checkbox" name="Branch" value="CSB">
+                    <label>COMPUTER SCIENCE AND BUSINESS SYSTEM</label><br>
+                    <input type="checkbox" name="Branch" value="CSE">
+                    <label>COMPUTER SCIENCE AND ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="CSI">
+                    <label>COMPUTER SCIENCE AND INFORMATION
+                        TECHNOLOGY</label><br>
+                    <input type="checkbox" name="Branch" value="DRG">
+                    <label>DAIRYING</label><br>
+                    <input type="checkbox" name="Branch" value="DTD">
+                    <label>DIGITAL TECHNIQUES FOR DESIGN AND PLANNING</label><br>
+                    <input type="checkbox" name="Branch" value="EEE">
+                    <label>ELECTRICAL AND ELECTRONICS ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="ECE">
+                    <label>ELECTRONICS AND COMMUNICATION
+                        ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="ECM">
+                    <label>ELECTRONICS AND COMPUTER ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="EIE">
+                    <label>ELECTRONICS AND INSTRUMENTATION
+                        ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="ETM">
+                    <label>ELECTRONICS AND TELEMATICS</label><br>
+                    <input type="checkbox" name="Branch" value="ECI">
+                    <label>ELECTRONICS COMMUNICATION AND
+                        INSTRUMENTATION ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="FSP">
+                    <label>FACILITIES AND SERVICES PLANNING</label><br>
+                    <input type="checkbox" name="Branch" value="FPT">
+                    <label>FOOD PROCESSING TECHNOLOGY</label><br>
+                    <input type="checkbox" name="Branch" value="FDS">
+                    <label>FOOD SCIENCE</label><br>
+                    <input type="checkbox" name="Branch" value="IPE">
+                    <label>INDUSTRIAL PRODUCTION ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="INF">
+                    <label>INFORMATION TECHNOLOGY</label><br>
+                    <input type="checkbox" name="Branch" value="ITE">
+                    <label>INFORMATION TECHNOLOGY AND ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="MCT">
+                    <label>MECHANICAL (MECHTRONICS) ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="MEC">
+                    <label>MECHANICAL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="MET">
+                    <label>METALLURGICAL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="MMT">
+                    <label>METALLURGY AND MATERIAL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="MIN">
+                    <label>MINING ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="PHD">
+                    <label>PHARM - D (M.P.C. STREAM)</label><br>
+                    <input type="checkbox" name="Branch" value="PHE">
+                    <label>PHARMACEUTICAL ENGINEERING</label><br>
+                    <input type="checkbox" name="Branch" value="PLG">
+                    <label>PLANNING</label><br>
+                    <input type="checkbox" name="Branch" value="TEX">
+                    <label>TEXTILE TECHNOLOGY</label><br>
+                </div><br><br></div>
+                <div class="item">
+                <label><b style="font-size: 150%;">Total Fees:</b></label><br>
+                <div style="background-color: #e7e7e7; padding:1%;" class="fees">
+                    <input type="checkbox" name="TotalFee" value="1">
+                    <label>Less Than 1 Lakh</label><br>
+                    <input type="checkbox" name="TotalFee" value="3">
+                    <label>Less Than 3 Lakh</label><br>
+                    <input type="checkbox" name="TotalFee" value="5">
+                    <label>Less Than 5 Lakh</label><br>
+                    <input type="checkbox" name="TotalFee" value="6">
+                    <label>Greater Than 5 Lakh</label><br>
+                </div><br></div>
+                <div class="item">
+                <label><b style="font-size: 150%;">Coed</b></label><br>
+                <div style="background-color: #e7e7e7; padding:1%;" class="coed">
+                    <input type="radio" id="coed" name="coed" value="COED">
+                    <label for="html">COED</label>
+                    <input type="radio" id="girls" name="coed" value="GIRLS">
+                    <label for="css">GIRLS</label>
+                    <input type="radio" id="all" name="coed" value="ALL" checked>
+                    <label for="css">ALL</label>
+                </div>
+                <br>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info but" formaction="College">Apply Filters</button>
+        </form>
+        <div class="college">
+            <% if(admin.length>0) { %>
+                <h1>Results Found: <%= admin.length %>
+                </h1>
+                <h3>Rank: <%= rank %>
+                </h3>
+                <% var mi=15; %>
+                    <% console.log(admin.length,mi); %>
+                        <% if(mi> admin.length) { %>
+                            <% mi=admin.length; %>
+                                <% } %>
+                                    <% for (i=0; i < mi ; i++) { %>
+                                        <form method="POST" class="col">
+                                            <div class="row co">
+                                                <div class="card mb-3">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-md-4">
+                                                            <img src="abcd.png" class="card-img img-fluid" alt="...">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div class="card-body ss">
+                                                                <div class="tit">
+                                                                    <%= admin[i].INSTITUTE_NAME %>
+                                                                </div>
+                                                                <br>
+                                                                <p class="card-text">
+                                                                <div class="table text">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <b>Place: </b>
+                                                                            <%= admin[i].PLACE %>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="hidden" name="INST_CODE"
+                                                                                value="<%= admin[i].INST_CODE %>">
+                                                                            <b>District :</b>
+                                                                            <%= admin[i].DIST %>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <input type="hidden" name="Branch"
+                                                                                value="<%= admin[i].BRANCH %>">
+                                                                            <b>Branch : </b>
+                                                                            <%= admin[i].BRANCH_NAME %>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col child" id="child">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <button type="submit" formaction="College"
+                                                                                formmethod="POST"
+                                                                                style="margin-left: 30%;">VIEW
+                                                                                DETAILS</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <% } %>
+                                            <% } else{ %>
+                                                <h1>No Colleges Found.</h1>
+                                                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url('../images/abc.png');
+        }
+        .container{
+            margin-top: 50px;
+            background-color: aliceblue;
+        }
+        .box{
+            padding: 1%;
+            width: 100%;
+        }
+        label{
+            font-weight: 500;
+        }
+        .h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container h-100">
+         <h1 class="h1">ADD COLLEGE</h1>
+        <div class="d-flex justify-content-center h-100">
+            <div class="box">
+                <form method="POST" action="">
+                            <div class="row">
+                                <div class="col-2">
+                                    <label for="">Institute Code </label>
+                                </div>
+                                    <div class="col-4">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" name="INST_CODE" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="">Institute Name </label>
+                                </div>
+                                    <div class="col-4">
+                                        <div class="input-group mb-3">
+                                            
+                                            <input type="text" class="form-control" name="INSTITUTE_NAME" required>
+                                        </div>
+                                    </div>
+                                </div>
+                        <div class="row">
+                            <div class="col-2">
+                                 <label for="">Place : &ensp;</label>
+                            </div>
+                            <div class="col-4">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" name="PLACE" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <label for="">District</label>
+                            </div>
+                            <div class="col-4">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" name="DIST" required>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="">Branch</label>
+                        </div>
+                        <div class="col-4">
+                        <div class="input-group mb-3">
+                            <input type="text" name="BRANCH" class="form-control" id="" placeholder="Ex:- 'CSE'" required>
+                        </div>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Branch Full Name</label>
+                        </div>
+                        <div class="col-4">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="BRANCH_NAME" id="" placeholder="Ex:- 'COMPUTER SCIENCE AND ENGINEERING'" size="50" required>
+                        </div>
+                            </div>
+                        </div>
+                         <div>
+                            <div style="text-align: center">
+                                <input type="radio" name="COED" id="" required value="Coed">
+                                <label for="Coed">Coed</label>
+                                <input type="radio" name="COED" id="" required value="Girls">
+                                <label for="Girls">Girls</label>
+                                <input type="radio" name="COED" id="" required value="Boys">
+                                <label for="Boys">Boys</label>
+
+                            </div>
+                        </div>
+                        <h4>Enter Closing Ranks Below:</h4>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">OC BOYS</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="OC_BOYS" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <label for="">OC GIRLS</label></div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="OC_GIRLS" id="" required>
+                        </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">BC A BOYS</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control"  name="BC_A_BOYS" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <label for="">BC A GIRLS</label></div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="BC_A_GIRLS" id="" required>
+                        </div>
+                            </div>
+                    </div>
+                     <div class="row">
+                        <div class="col">
+                            <label for="">BC B BOYS</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control"  name="BC_B_BOYS" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <label for="">BC B GIRLS</label></div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="BC_B_GIRLS" id="" required>
+                        </div>
+                            </div>
+                    </div>
+                     <div class="row">
+                        <div class="col">
+                            <label for="">BC C BOYS</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control"  name="BC_C_BOYS" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <label for="">BC C GIRLS</label></div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="BC_C_GIRLS" id="" required>
+                        </div>
+                            </div>
+                    </div>
+                        <div class="row">
+                        <div class="col">
+                            <label for="">BC D BOYS</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control"  name="BC_D_BOYS" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <label for="">BC D GIRLS</label></div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="BC_D_GIRLS" id="" required>
+                        </div>
+                            </div>
+                    </div>
+                        <div class="row">
+                        <div class="col">
+                            <label for="">BC E BOYS</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control"  name="BC_E_BOYS" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <label for="">BC E GIRLS</label></div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="BC_E_GIRLS" id="" required>
+                        </div>
+                            </div>
+                    </div>
+                     <div class="row">
+                        <div class="col">
+                            <label for="">SC BOYS</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control"  name="SC_BOYS" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <label for="">SC GIRLS</label></div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="SC_GIRLS" id="" required>
+                        </div>
+                            </div>
+                    </div>
+                     <div class="row">
+                        <div class="col">
+                            <label for="">ST BOYS</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control"  name="ST_BOYS" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <label for="">ST GIRLS</label></div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="ST_GIRLS" id="" required>
+                        </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">TUTION FEE</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="number" class="form-control" name="TUTION_FEE" id="" required>
+                        </div>
+                        </div>
+                        <div class="col">
+                            <label for="">AFFILIATED</label>
+                        </div>
+                        <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="AFFILIATED" required placeholder="'JNTUH'">
+                        </div>
+                            </div>
+                    </div>
+                    <div style="margin-left: 40%;">
+                        <label for="file">Institute Image</label>
+                        <div class="input-group mb-3">
+                            <input type="file" name="INST_PIC" id="">
+                        </div>
+                    </div>
+                    <div style="margin-left: 40%">
+                        <button type="reset" class="btn btn-danger" style="padding-left: 4%;padding-right: 4%">Reset</button>&emsp;&emsp;
+                        <button type="submit" class="btn btn-success" style="padding-left: 4%;padding-right: 4%">Submit</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+</body></html>
